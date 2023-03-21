@@ -1,0 +1,34 @@
+﻿@model List<Employee>
+
+<H1>Employee List</H1>
+
+<a asp-action="AddEmployee" asp-controller="Employee">Add Employee</a>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Employee ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Department</th>       @*how default interface would look like*@
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var employee in Model){        @*this is for each row*@
+        <tr>
+          <th scope="row">@employee.Id</th>    @* this at-the-rate symbol for this block is a way to access the employee model and its parameter*@
+          <td>@employee.Name</td>
+          <td>@employee.DOB</td>
+          <td>@employee.Email</td>
+          <td>@employee.Phone</td>
+          <td>@employee.Department</td>
+          <td><a asp-controller="Employee" asp-action="EditEmployee" asp-route-employeeId="@employee.Id">Update</a></td>
+          <td><a asp-controller="Employee" asp-action="DeleteEmployee" asp-route-employeeId="@employee.Id" >Delete</a></td>
+        </tr>
+    }
+  </tbody>
+</table>

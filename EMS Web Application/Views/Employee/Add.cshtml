@@ -1,0 +1,35 @@
+﻿@model Employee
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Add Employee</h1>
+
+
+<form method="post" asp-action="AddEmployee" asp-controller="Employee" >
+   <div asp-validation-summary="All" class="text-danger" ></div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/> 
+    </div>
+    <div>
+        <label asp-for="DOB"></label>
+        <input asp-for="DOB"/> 
+    </div>
+     <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/> 
+    </div>
+     <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone"/> 
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <input asp-for="Department"/> 
+    </div>
+    <button type="submit">Add Employee</button>
+</form>

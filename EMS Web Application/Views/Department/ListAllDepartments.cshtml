@@ -1,0 +1,26 @@
+﻿@model List<Department>
+
+<H1>Department List</H1>
+
+<a asp-action="AddDepartment" asp-controller="Department">Add Department</a>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Department ID</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var department in Model){        @*this is for each row*@
+        <tr>
+          <th scope="row">@department.Id</th>    @* this at-the-rate symbol for this block is a way to access the employee model and its parameter*@
+          <td>@department.Name</td>
+          <td><a asp-controller="Department" asp-action="EditDepartment" asp-route-departmentId="@department.Id">Update</a></td>
+          <td><a asp-controller="Department" asp-action="DeleteDepartment" asp-route-departmentId="@department.Id" >Delete</a></td>
+        </tr>
+    }
+  </tbody>
+</table>

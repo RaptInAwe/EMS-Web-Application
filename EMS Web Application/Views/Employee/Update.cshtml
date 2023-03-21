@@ -1,0 +1,32 @@
+﻿@model Employee 
+
+<h1> Update Employee Information</h1>
+
+<form method="post" asp-action="EditEmployee" asp-controller="Employee" >
+   <div asp-validation-summary="All" class="text-danger" ></div>
+   <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" readonly hidden/> 
+    </div> 
+   <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/> 
+    </div>
+    <div>
+        <label asp-for="DOB"></label>
+        <input asp-for="DOB"/> 
+    </div>
+     <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/> 
+    </div>
+     <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone"/> 
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <input asp-for="Department"/> 
+    </div>
+    <button type="submit">Update</button>
+</form>

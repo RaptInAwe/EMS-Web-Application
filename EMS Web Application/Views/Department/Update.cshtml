@@ -1,0 +1,16 @@
+﻿@model Department 
+
+<h1> Update Department Information</h1>
+
+<form method="post" asp-action="EditDepartment" asp-controller="Department" >
+   <div asp-validation-summary="All" class="text-danger" ></div>
+   <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" readonly, hidden/> 
+    </div> 
+   <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/> 
+    </div>
+    <button type="submit">Update</button>
+</form>
